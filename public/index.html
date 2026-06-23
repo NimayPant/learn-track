@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Activity Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Activity Manager</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Teachers</h2>
+      <form id="teacher-form">
+        <div class="field-row">
+          <label>First name</label>
+          <input type="text" id="teacher-first" required />
+        </div>
+        <div class="field-row">
+          <label>Last name</label>
+          <input type="text" id="teacher-last" required />
+        </div>
+        <div class="field-row">
+          <label>Email</label>
+          <input type="email" id="teacher-email" required />
+        </div>
+        <button type="submit">Save teacher</button>
+      </form>
+      <div id="teachers-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Courses</h2>
+      <form id="course-form">
+        <div class="field-row">
+          <label>Course Name</label>
+          <input type="text" id="course-name" required />
+        </div>
+        <div class="field-row">
+          <label>Description</label>
+          <input type="text" id="course-desc" />
+        </div>
+        <div class="field-row">
+          <label>Teacher</label>
+          <select id="course-teacher"></select>
+        </div>
+        <button type="submit">Save course</button>
+      </form>
+      <div id="courses-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Students</h2>
+      <form id="student-form">
+        <input type="hidden" id="student-id" />
+        <div class="field-row">
+          <label>First name</label>
+          <input type="text" id="first-name" required />
+        </div>
+        <div class="field-row">
+          <label>Last name</label>
+          <input type="text" id="last-name" required />
+        </div>
+        <div class="field-row">
+          <label>Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <button type="submit">Save student</button>
+      </form>
+      <div id="students-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Activities</h2>
+      <form id="activity-form">
+        <input type="hidden" id="activity-id" />
+        <div class="field-row">
+          <label>Name</label>
+          <input type="text" id="activity-name" required />
+        </div>
+        <div class="field-row">
+          <label>Category</label>
+          <input type="text" id="activity-category" />
+        </div>
+        <div class="field-row">
+          <label>Max points</label>
+          <input type="number" id="activity-max" min="1" step="0.1" required />
+        </div>
+        <button type="submit">Save activity</button>
+      </form>
+      <div id="activities-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Performance Records</h2>
+      <form id="score-form">
+        <input type="hidden" id="score-id" />
+        <div class="field-row">
+          <label>Student</label>
+          <select id="student-select" required></select>
+        </div>
+        <div class="field-row">
+          <label>Activity</label>
+          <select id="activity-select" required></select>
+        </div>
+        <div class="field-row">
+          <label>Score</label>
+          <input type="number" id="score-value" min="0" step="0.1" required />
+        </div>
+        <button type="submit">Save record</button>
+      </form>
+      <div id="scores-list"></div>
+    </section>
+
+    <section class="card report-card">
+      <h2>Reports</h2>
+      
+      <div class="charts-wrapper">
+        <div class="chart-container">
+          <canvas id="scoresChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <canvas id="activitiesChart"></canvas>
+        </div>
+      </div>
+
+      <div id="report-summary"></div>
+      <div id="report-activity-summary"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built by Nimay Pant, Amritanshu Shukla.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
